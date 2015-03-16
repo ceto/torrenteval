@@ -1,0 +1,35 @@
+/*****************
+ Color Definitions
+ *****************/
+
+
+/* White */
+$white: #fff; //main text color
+$prilight: #636d72; //gray text
+
+
+/* Gray  */
+$seclight: #909090; //input placeholder
+
+/* Black */
+$black: #000;
+$pridark:#12171a; // main background
+$secdark:#1a2125; // cat bg, row hover
+$tertdark:#333c41; // borders
+
+
+/* Red */
+$highlight:#ff3737; // buttons
+$highlight2:#ea2929; // button hover
+
+
+/*********************
+ Breakpoints and width
+ *********************/
+
+$bp0: 320px;
+$bp1: 480px;
+$bp2: 768px;
+$bp3: 1024px;
+$bp4: 1280px;
+$bp5: 1600px;
