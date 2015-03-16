@@ -27,9 +27,20 @@ $highlight2:#ea2929; // button hover
  Breakpoints and width
  *********************/
 
-$bp0: 320px;
-$bp1: 480px;
-$bp2: 768px;
-$bp3: 1024px;
-$bp4: 1280px;
-$bp5: 1600px;
+$s0: 320px;
+$s1: 480px;
+$s2: 768px;
+$s3: 1024px;
+$s4: 1280px;
+$s5: 1600px;
+
+$narrowmax: 980px;
+$normalmax: 1140px;
+$widemax: 1360px;
+
+
+/****************
+	Fonts
+**************/
+$sans-serif:'Proxima Nova';
+$museo:'Museo Sans';

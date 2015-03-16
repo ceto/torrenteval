@@ -1,0 +1,51 @@
+.pagehead {
+	background-color: $pridark;
+	.wrapper {
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
+}
+
+.pagehead__brand {
+	@include hide-text();
+	background-image: url('../img/logo.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: auto 100%;
+	display: block;
+	height:3em;
+	width:18em;
+	float:left;
+}
+
+
+.nav--main {
+	ul {
+		margin:0;
+		padding:0;
+		list-style-type: none;
+		float:right;
+	}
+	
+	li {
+		display:inline-block;
+		margin-left: 0.25em;
+	}
+
+	a {
+		color:$white;
+		font-weight: 700;
+		display: inline-block;
+		font-size:0.938em;
+		line-height: 1;
+		padding:1em 1.5em;
+		border:2px solid transparent;
+		border-radius:1.666em;
+		.active &, &:hover, &:focus {
+			color:$highlight;
+			border-color:currentColor;
+		}
+	}
+
+
+}

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<header class="listheader banner">
+	<div class="section searchblock">
+		<div class="wrapper wrapper--narrow">
+			{% include searchblock.html %}
+		</div>
+	</div>
+	<div class="wrapper wrapper--normal">
+		<hr>
+		{% include pagination.html %}
+	</div>
+</header>
+
+<section class="torrentlist">
+	<div class="wrapper wrapper--normal">
+		{% include torrentlist.html %}
+	</div>
+</section>
+
+<div class="wrapper wrapper--normal">
+	{% include pagination.html %}
+</div>
