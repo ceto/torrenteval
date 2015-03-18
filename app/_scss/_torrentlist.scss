@@ -1,0 +1,235 @@
+.torrenttable {
+  display: table;
+  //border-spacing: 3px;
+
+  width: 100%;
+  //border-collapse: separate; /* Or do nothing, this is default */
+
+  border-collapse: collapse;
+}
+
+.torrenttable__header {
+  display: table-row;
+  background-color: $almostblack;
+  border: 1px solid $tertdark;
+
+  text-align: center;
+  > div {
+  	font-size: .875em;
+    display: table-cell;
+    padding: 1em .5em;
+    white-space: nowrap;
+  }
+}
+.torrentrow {
+  display: table-row;
+  //border: 1px solid $tertdark;
+  &:hover {
+    background-color: $secdark;
+    .torrentrow__maincat:after {
+      background-color: $highlight;
+    }
+  }
+}
+
+
+
+
+.sortarrows {
+	display: inline-block;
+	position: relative;
+	//margin-left: .125em;
+	height:1em;
+	width:1em;
+	font-size: .666em;
+	.arrow {
+		position: absolute;
+		display: block;
+		width:0;
+		height:0;
+		//background-color: #fff;
+		&.active, &:hover, &:focus {
+			
+			//background-color: $highlight;
+		}
+	}
+
+	.arrow--up {
+		top:-1px;
+		
+		border-bottom:.5em solid $prilight;
+		border-right:.5em solid transparent;
+		border-left:.5em solid transparent;
+		&.active, &:hover, &:focus {
+			border-bottom:.5em solid currentColor;
+		}
+	}
+	.arrow--down {
+		bottom:0px;
+		border-top:.5em solid $prilight;
+		border-right:.5em solid transparent;
+		border-left:.5em solid transparent;
+		&.active, &:hover, &:focus {
+			border-top:.5em solid currentColor;
+		}
+	}
+}	
+
+.torrentrow__maincat,
+.torrentrow__title,
+.torrentrow__size,
+.torrentrow__seed,
+.torrentrow__leech,
+.torrentrow__dl {
+  font-weight: 700;
+  line-height: 1;
+
+  display: table-cell;
+
+  padding: .5em .5em;
+
+  text-align: center;
+  vertical-align: middle;
+
+  color: $prilight;
+  border: 1px solid $tertdark;
+}
+
+
+.torrentrow__maincat {
+  font-size: .875em;
+  font-weight: 400;
+  line-height: 4.875em;
+
+  position: relative;
+
+  width: 4.666em;
+  height: 4.666em;
+  padding: 0;
+
+  vertical-align: middle;
+
+  background-color: $secdark;
+  &:after {
+    /* kis piros vonalka baloldalt */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1px;
+
+    display: block;
+
+    width: 2px;
+
+    content: '';
+
+    background-color: transparent;
+  }
+  > a {
+    position: relative;
+
+    display: inline-block;
+
+    width: 4.666em;
+    height: 4.666em;
+
+    text-transform: uppercase;
+    &:before {
+      position: absolute;
+      top: 1em;
+      left: 1.5em;
+
+      display: inline-block;
+
+      width: 1.666em;
+      height: 2.666em;
+
+      content: '';
+
+      border-top: 3px solid $tertdark;
+      border-bottom: 3px solid $tertdark;
+    }
+  }
+}
+
+
+.torrentrow__title {
+  padding: .5em .5em;
+
+  text-align: left;
+
+  color: #fff;
+  border-right: none;
+
+  @include bp($s1) {
+    padding: 1em 1em;
+  }
+  @include bp($s2) {
+    max-width: 22em;
+    padding: 1.125em 2em .875em 2em;
+  }
+  .torrentrow__title__name {
+    font-weight: 700;
+
+    display: block;
+
+    @include bp($s2) {
+      overflow: hidden;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    a {
+      // display: block;
+      // max-width: 30em;
+      // overflow: hidden; 
+      // text-overflow: ellipsis;
+      // white-space: nowrap;
+      color: #fff;
+    }
+  }
+  .torrentrow__title__subcat {
+    font-family: $arial;
+    font-size: .75em;
+    font-weight: 400;
+    font-style: italic;
+
+    display: block;
+
+    margin-top: .25em;
+
+    color: $prilight;
+    a {
+      color: inherit;
+      &:hover,
+      &:focus {
+        color: $highlight;
+      }
+    }
+  }
+}
+
+.torrentrow__size {
+  border-right: none;
+  border-left: none;
+
+  @include bp($s2) {
+    white-space: nowrap;
+  }
+}
+.torrentrow__seed {
+  border-right: none;
+  border-left: none;
+}
+.torrentrow__leech {
+  border-right: none;
+  border-left: none;
+}
+.torrentrow__dl {
+  min-width: 3em;
+
+  border-left: none;
+  .dlicon {
+    width: .875em;
+  }
+}

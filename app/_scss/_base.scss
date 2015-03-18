@@ -7,12 +7,24 @@ img {
   height:auto;
 }
 
+html {
+	overflow-y: auto;
+	min-height: 100%;
+	text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
 
 body {
+	overflow-x:hidden;
 	background-color: $pridark;
 	color:$prilight;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 1;
+	@include bp($s3){
+		font-size: 16px;
+	}
 }
 
 

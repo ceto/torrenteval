@@ -1,1 +1,74 @@
-Torrent list comes here ...
+<section class="torrenttable">
+	<header class="torrenttable__header">
+	 	<div>Tipus</div>
+	 	<div>
+	 		Név
+	 		<span class="sortarrows">
+	 			<a href="#" class="arrow arrow--up"></a>
+				<a href="#" class="arrow arrow--down"></a>
+	 		</span>
+	 	</div>
+		<div>
+			Méret
+			<span class="sortarrows">
+	 			<a href="#" class="arrow arrow--up"></a>
+				<a href="#" class="arrow arrow--down active"></a>
+	 		</span>
+	 	</div>
+		<div>
+			SE
+			<span class="sortarrows">
+	 			<a href="#" class="arrow arrow--up"></a>
+				<a href="#" class="arrow arrow--down"></a>
+	 		</span>
+	 	</div>
+		<div>
+			LE
+			<span class="sortarrows">
+	 			<a href="#" class="arrow arrow--up"></a>
+				<a href="#" class="arrow arrow--down"></a>
+	 		</span>
+	 	</div>
+		<div>Letöltés</div>
+	</header>
+	{% for i in (1..15) %}
+	<div class="torrentrow">
+		<div class="torrentrow__maincat">
+			<a href="#">
+				Anime
+			</a>
+		</div>
+		
+		<div class="torrentrow__title">
+			<span class="torrentrow__title__name">
+				<a href="#">
+					{% lipsum 1 1 1	%}
+				</a>
+			</span>
+			<span class="torrentrow__title__subcat">
+				<a href="#">
+					&rarr; Science Fiction
+				</a>
+			</span>
+		</div>
+		
+		<div class="torrentrow__size">
+			{% random 25:2500 %} MB
+		</div>
+		<div class="torrentrow__seed">
+			{% random 10000:99999 %}
+		</div>
+		<div class="torrentrow__leech">
+			{% random 1000:9999 %}
+		</div>
+
+
+		<div class="torrentrow__dl">
+			<a href="#">
+				<img class="dlicon" src="../img/icon_dl.svg" alt="Download torrent">
+			</a>
+		</div>
+
+	</div>
+	{% endfor %}
+</section><!-- /.torrenttable -->
