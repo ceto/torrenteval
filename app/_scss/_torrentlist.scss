@@ -1,10 +1,53 @@
+.pagination {
+	@include clearfix();
+	margin:2em 0;
+}
+.pagination--top {
+	
+}
+.pagination--bottom {
+
+}
+.resultsno {
+	float:left;
+	font-weight: 300;
+	padding:.5em 0 .25em;
+}
+.nav--pagelist {
+	float:right;
+	ul {
+		margin:0;
+		padding:0;
+		list-style-type: none;
+	}
+	li {
+		display: inline-block;
+	}
+	a {
+		display: inline-block;
+		color:  #fff;
+		font-size: 1em; 
+		font-weight: 700;
+		line-height: 1;
+		padding:.5em .6em .25em;
+		text-align: center;
+		border-radius: 2px;
+		border:1px solid $gray;
+		&.active, &:hover, &:focus {
+			background-color: $highlight;
+			border-color:$highlight;
+		}	
+	}
+}
+
+
+
+
+
 .torrenttable {
   display: table;
-  //border-spacing: 3px;
-
   width: 100%;
   //border-collapse: separate; /* Or do nothing, this is default */
-
   border-collapse: collapse;
 }
 
@@ -21,16 +64,7 @@
     white-space: nowrap;
   }
 }
-.torrentrow {
-  display: table-row;
-  //border: 1px solid $tertdark;
-  &:hover {
-    background-color: $secdark;
-    .torrentrow__maincat:after {
-      background-color: $highlight;
-    }
-  }
-}
+
 
 
 
@@ -75,6 +109,19 @@
 	}
 }	
 
+
+
+.torrentrow {
+  display: table-row;
+  //border: 1px solid $tertdark;
+  &:hover {
+    background-color: $secdark;
+    .torrentrow__maincat:after {
+      background-color: $highlight;
+    }
+  }
+}
+
 .torrentrow__maincat,
 .torrentrow__title,
 .torrentrow__size,
@@ -110,6 +157,19 @@
   vertical-align: middle;
 
   background-color: $secdark;
+  // &:before {
+  // 	position: absolute;
+  // 	content:'';
+
+  // 	top:-1px;
+  // 	right:0;
+  // 	bottom:-1px;
+  // 	left:0;
+
+  // 	border-top: 1px solid $tertdark;
+  // 	border-bottom: 1px solid $tertdark;
+
+  // }
   &:after {
     /* kis piros vonalka baloldalt */
     position: absolute;
@@ -128,9 +188,8 @@
   > a {
     position: relative;
 
-    display: inline-block;
-
-    width: 4.666em;
+    display: block;
+		width: 4.666em;
     height: 4.666em;
 
     text-transform: uppercase;

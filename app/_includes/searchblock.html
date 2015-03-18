@@ -1,1 +1,68 @@
 <h3>Részletes keresés</h3>
+<form class="thesearchform" action="#" method="post">
+	
+	<div class="row">
+		<div class="col col-9">		
+			<input id="s_what" name="s_what" type="search" placeholder="Keresendő kifejezés, cím, előadó…">
+		</div>
+
+		<div class="col col-3">
+			<label for="s_in">Miben keressen</label>
+			<select name="s_in" id="s_in">
+				<option value="in_descr">Leírásban</option>
+				<option value="in_title">Címben</option>
+				<option value="in_all">Mindben</option>
+			</select>
+		</div>
+
+	</div><!-- /.row-->
+
+
+	<div class="row">
+		
+		<div class="col col-3">
+			<label for="s_cat">Kategória</label>
+			<select name="s_cat" id="s_cat">
+				<option value="all">Mind</option>
+				<option value="sor">Sorozatok</option>
+				<option value="film">Filmek</option>
+				<option value="ebook">E-Book</option>
+				<option value="audiobook">Hagoskönyv</option>
+				<option value="mp3">MP3</option>
+				<option value="lossless">Lossles</option>
+				<option value="xxx">XXX</option>
+			</select>
+		</div>
+		
+		<div class="col col-3">
+			<label for="s_subcat">Alkategória</label>
+			<select name="s_subcat" id="s_subcat">
+				<option value="all">Mind</option>
+				<option value="sor">Sorozatok</option>
+				<option value="film">Filmek</option>
+				<option value="ebook">E-Book</option>
+				<option value="audiobook">Hagoskönyv</option>
+				<option value="mp3">MP3</option>
+				<option value="lossless">Lossles</option>
+				<option value="xxx">XXX</option>
+			</select>
+		</div>
+		
+		<div class="col col-3">
+			<label for="s_lang">Nyelv</label>
+			<select name="s_lang" id="s_lang">
+				<option value="all">Mind</option>
+				<option value="sor">Magyat</option>
+				<option value="film">Angol</option>
+				<option value="ebook">Német</option>
+				<option value="audiobook">Orosz</option>
+			</select>
+		</div>
+		
+		<div class="col col-3">
+			<input type="submit">
+		</div>
+	</div><!-- /.row-->
+
+
+</form>

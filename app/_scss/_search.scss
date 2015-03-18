@@ -1,0 +1,62 @@
+.searchblock {
+	@include clearfix();
+	padding:7em 0 7em;
+	h3 {
+		margin:0;
+		color:#fff;
+	}
+}
+.thesearchform {
+	.row {
+		margin-bottom: 1em;
+		}
+
+	.col {
+		padding-top:2em;
+	}
+}
+label {
+	color:  #fff;
+	font-size: 1.063em;
+	display: block;
+	position: absolute;
+	top:.5em;
+	margin-left: 6px;
+}
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="submit"],
+input[type="textarea"],
+select {
+	box-sizing:border-box;
+	width:100%;
+	font-size: 1.063em;
+	line-height: 1;
+	color:$seclight;
+	-webkit-appearance:initial;
+	border:none;
+	border-radius: 4px;
+	background-color: #fff;
+	padding:1em 1.25em .875em;
+	box-shadow: 0 0 0 6px rgba($almostblack,.3);
+	//border:6px solid rgba($almostblack,.2);
+	margin:6px;
+	
+	outline-width: 0;
+	outline-color: rgba($almostblack,.3);
+	&:hover, &:focus {
+		box-shadow: 0 0 0 6px rgba($almostblack,.4);
+	}
+}
+
+
+select {
+	padding-right: 2em;
+}
+
+input[type="submit"] {
+	background-color: $highlight;
+	text-align: center;
+	color:#fff;
+}
