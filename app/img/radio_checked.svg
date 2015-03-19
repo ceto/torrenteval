@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="40px" height="40px">
+<filter id="filter0" x="-21.43%" y="-21.43%" width="142.86%" height="142.86%" filterUnits="objectBoundingBox">
+<feGaussianBlur in="SourceAlpha" result="igBlurOut" stdDeviation="3.00"/>
+<feFlood result="igFloodOut" flood-color="rgb(255,255,255)"/>
+<feComposite in="igFloodOut" in2="igBlurOut" result="igRawGlow" operator="out"/>
+<feComposite in="igRawGlow" in2="SourceAlpha" result="igRawGlowClipped" operator="in"/>
+<feComponentTransfer in="igRawGlowClipped" result="innerGlow">
+<feFuncA type="linear" slope="1.00"/>
+</feComponentTransfer>
+<feMerge>
+<feMergeNode in="innerGlow"/>
+</feMerge>
+</filter>
+<clipPath id="clip0">
+<path fill-rule="evenodd" d="M-6 46C-6 46-6-6-6-6-6-6 46-6 46-6 46-6 46 46 46 46 46 46-6 46-6 46ZM 20 6C 12.27 6 6 12.27 6 20 6 27.73 12.27 34 20 34 27.73 34 34 27.73 34 20 34 12.27 27.73 6 20 6Z"/>
+</clipPath>
+<defs>
+<circle id="symbol0" cx="20.00" cy="20.00" r="14.00"/>
+</defs>
+<g>
+<use xlink:href="#symbol0" fill="rgb(255,255,255)"/>
+<use xlink:href="#symbol0" fill="rgb(25,33,37)"/>
+<use xlink:href="#symbol0" filter="url(#filter0)"/>
+<use clip-path="url(#clip0)" xlink:href="#symbol0" fill="none" stroke="rgb(25,35,51)" stroke-width="6.00px"/>
+</g>
+</svg>

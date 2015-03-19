@@ -1,45 +1,49 @@
 .banner {
-	//@include clearfix();
 	position: relative;
-	background-repeat:repeat, no-repeat, no-repeat;
-	background-size: auto, 100% auto, cover;
-	background-position: center center;
-	background-image: 
-	url('../img/pattern.png'),
-	radial-gradient(ellipse at center, rgba($pridark,.75) 0%, rgba($pridark,1) 90%),
-	url('../img/banner_list.jpg') ;
 
-	background-blend-mode: multiply, normal, normal;
+
 
 	padding-bottom:2.5em;
 	margin-bottom: -2.5em;
+	
+	&:before,
+	&:after {
+		content:'';
+		display: block;
+		position: absolute;
+		left:0;
+		right:0;
+		top:0;
+		bottom:0;
+	}
 
+	&:before {
+		z-index: -1;
+		background-repeat: no-repeat, no-repeat;
+		background-size: 100% auto, cover;
+		background-position: center center;
+		background-image: radial-gradient(ellipse at center, rgba($pridark,.333) 0%, rgba($pridark,1) 90%), url('../img/banner_list.jpg');
+		filter: blur(4px);
+		-webkit-filter: blur(4px);
+	}
+	&:after {
+		z-index: 0;
+		background-repeat: repeat;
+		background-size: auto;
+		background-position: center center;
+		background-image: url('../img/pattern_faux.png');
 
-	// &:before {
-	// 	content:'';
-	// 	display: block;
-	// 	position: absolute;
-	// 	left:0;
-	// 	right:0;
-	// 	top:0;
-	// 	bottom:0;
-	// 	z-index: 0;
+	}
 
-	// 	background-repeat:repeat, no-repeat, no-repeat;
-	// 	background-size: auto, 100% auto, cover;
-	// 	background-position: center center;
-	// 	background-image: 
-	// 	url('../img/pattern.png'),
-	// 	radial-gradient(ellipse at center, rgba($pridark,.75) 0%, rgba($pridark,1) 90%),
-	// 	url('../img/banner_list.jpg') ;
-
-	// 	background-blend-mode: multiply, normal, normal;
-	// 	filter: blur(2px);
-	// }
+	.binner {
+		position: relative;
+		z-index:1; 
+	}
 	
 }
 .pagehead {
 	background-color: $pridark;
+		border-bottom: 1px solid $tertdark;
 	.wrapper {
 		padding-top: 2em;
 		padding-bottom: 2em;
@@ -55,16 +59,25 @@
 	display: block;
 	height:3em;
 	width:18em;
-	float:left;
+	margin:0 auto 1em;
+	@include bp($s2) {
+		float:left;
+		margin:0;
+	}
 }
 
 
 .nav--main {
 	ul {
-		margin:0;
+		margin:1.5em 0 0 0;
 		padding:0;
 		list-style-type: none;
-		float:right;
+		text-align: center;
+		@include bp($s2) {
+			float:right;
+			text-align: right;
+			margin:.5em 0 0 0;
+		}
 	}
 	
 	li {
@@ -78,10 +91,10 @@
 		display: inline-block;
 		font-size:0.938em;
 		line-height: 1;
-		padding:1em 1.5em;
+		padding:.875em 1.333em;
 		border:2px solid transparent;
 		border-radius:1.666em;
-		.active &, &:hover, &:focus {
+		&.active, &:hover, &:focus {
 			color:$highlight;
 			border-color:currentColor;
 		}

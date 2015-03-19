@@ -1,77 +1,153 @@
 .pagefooter {
-	background-color: $secdark;
-	color:$seclight;
-	.wrapper {
-		padding-top:1em;
-		padding-bottom: 1em;
-	}
+	margin-top: 2em;
+  color: $seclight;
+  background-color: $secdark;
+  .wrapper {
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+  }
 }
 
 
 .pagefooter__copy {
-	float:left;
+  @include clearfix();
+  margin:0 auto;
+  @include bp($s2) {
+    float:left
+  }
 }
 
 .pagefooter__brand {
-	font-size: 0.938em;
-	line-height: 1;
-	@include hide-text();
-	background-image: url('../img/logo_footer.png');
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: auto 100%;
-	display: block;
-	height:2em;
-	width:2em;
-	float:left;
+  font-size: .938em;
+  line-height: 1;
+
+  display: block;
+  float: left;
+
+  width: 2em;
+  height: 2em;
+
+  background-image: url('../img/logo_footer.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: auto 100%;
+
+  @include hide-text();
 }
 .pagefooter__discl {
-	font-size: 0.938em;
-	line-height: 1;
-	font-weight: 700;
-	display: inline-block;
-	line-height: 1;
-	padding:.5em 0;
-	margin-left: 1.25em;	
+	color:#fff;
+  font-size: .938em;
+  font-weight: 700;
+  line-height: 1;
+  line-height: 1;
+
+  display: block;
+  float: left;
+
+  margin-left: 1.25em;
+  padding: .5em 0;
+}
+
+.pagefooter__social {
+  font-size: .938em;
+  line-height: 1;
+
+  position: relative;
+
+  display: block;
+  float: left;
+
+  margin-left: .875em;
+  padding: 0 0 0 1.5em;
+
+  background-size: auto;
+  &:before {
+  	color:rgba($tertdark,.75);
+  	font-family: $museo;
+    font-size: 3em;
+    font-weight: 100;
+
+    position: absolute;
+    top: -.125em;
+    left: 0;
+
+    content: '/';
+  }
+  .social {
+    display: block;
+    float: left;
+
+    width: 2em;
+    height: 2em;
+    margin-left: .333em;
+    margin-top: 1px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+  }
+  .social--tw {
+    background-image: url('../img/social_twitter.png');
+    &:hover,
+    &:focus {
+      background-image: url('../img/social_twitter_hover.png');
+    }
+  }
+  .social--fb {
+    background-image: url('../img/social_facebook.png');
+    &:hover,
+    &:focus {
+      background-image: url('../img/social_facebook_hover.png');
+    }
+  }
 }
 
 .nav--footer {
-	ul {
-		margin:0;
-		padding:0;
-		list-style-type: none;
-		float:right;
-		
-	}
-	
-	li {
-		display:inline-block;
-		&:before {
-			font-weight: 300;
-			content:'/';
-			display: inline-block;
-			padding:.5em 0;
-			margin:0 .25em 0 0;			
-		}
-		&:first-child {
-			&:before {
-				display: none;
-			}
-		}
-	}
+  ul {
+    margin: 2em 0 0;
+    padding: 0;
 
-	a {
-		color:$white;
-		display: inline-block;
-		font-size:0.938em;
-		font-weight: 700;
-		line-height: 1;
-		padding:.5em .5em;
-		.active &, &:hover, &:focus {
-			color:$highlight;
+    list-style-type: none;
+    text-align: center;
 
-		}
-	}
+    @include bp($s2) {
+      text-align: left;
+      float:right;
+      margin:0;
+    }
+  }
+  li {
+    display: inline-block;
+    &:before {
+      font-weight: 300;
 
+      display: inline-block;
 
+      margin: 0 .25em 0 0;
+      padding: .5em 0;
+
+      content: '/';
+    }
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
+  a {
+    font-size: .938em;
+    font-weight: 700;
+    line-height: 1;
+
+    display: inline-block;
+
+    padding: .5em .5em;
+
+    color: $white;
+    .active &,
+    &:hover,
+    &:focus {
+      color: $highlight;
+    }
+  }
 }

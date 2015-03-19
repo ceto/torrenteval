@@ -9,22 +9,40 @@
 
 }
 .resultsno {
-	float:left;
+  text-align: right;
 	font-weight: 300;
 	padding:.5em 0 .25em;
+  margin-bottom:.5em;
+
+  @include bp($s2) {
+    float:left;
+    text-align: left;
+    margin:0;
+  }
 }
 .nav--pagelist {
-	float:right;
+  @include clearfix();
+  float:right;
+  clear: right;
+  
+  @include bp($s2) {
+    clear:none;
+    float:right;
+  }
+
 	ul {
 		margin:0;
 		padding:0;
 		list-style-type: none;
 	}
 	li {
-		display: inline-block;
+		display: block;
+    float:left;
+    margin-left:.5em;
+
 	}
 	a {
-		display: inline-block;
+		display: block;
 		color:  #fff;
 		font-size: 1em; 
 		font-weight: 700;
@@ -113,10 +131,15 @@
 
 .torrentrow {
   display: table-row;
-  //border: 1px solid $tertdark;
+
+  border: 1px solid $tertdark;
+  //position: relative;
   &:hover {
     background-color: $secdark;
-    .torrentrow__maincat:after {
+    // .torrentrow__maincat {
+    //   border-left: 1px solid $highlight;
+    // }
+    .linewrapper:after {
       background-color: $highlight;
     }
   }
@@ -139,58 +162,60 @@
   vertical-align: middle;
 
   color: $prilight;
-  border: 1px solid $tertdark;
+  //border: 1px solid $tertdark;
+  box-sizing:content-box;
 }
 
 
 .torrentrow__maincat {
-  font-size: .875em;
-  font-weight: 400;
-  line-height: 4.875em;
+  
 
-  position: relative;
+  border-right: 1px solid $tertdark;
 
-  width: 4.666em;
-  height: 4.666em;
+  width: 4em;
   padding: 0;
 
   vertical-align: middle;
 
   background-color: $secdark;
-  // &:before {
-  // 	position: absolute;
-  // 	content:'';
-
-  // 	top:-1px;
-  // 	right:0;
-  // 	bottom:-1px;
-  // 	left:0;
-
-  // 	border-top: 1px solid $tertdark;
-  // 	border-bottom: 1px solid $tertdark;
-
-  // }
-  &:after {
-    /* kis piros vonalka baloldalt */
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -1px;
-
-    display: block;
-
-    width: 2px;
-
-    content: '';
-
-    background-color: transparent;
-  }
-  > a {
+  
+  /* kis piros vonalka baloldalt */
+  .linewrapper {
     position: relative;
+    display: block;
+    height: 100%;
+
+    &:after {
+
+      position: absolute;
+      top: 0em;
+      bottom: 0em;
+      left: -1px;
+
+      display: block;
+
+      width: 2px;
+
+      content: '';
+
+      background-color: transparent;
+    }
+
+
+  }
+
+  a {
+    position: relative;
+    
+    font-size: .875em;
+    font-weight: 400;
+    line-height: 4.5;
 
     display: block;
-		width: 4.666em;
-    height: 4.666em;
+		width: 4.5em;
+    height: 4.5em;
+    //height: 100%;
+    //background-color: red;
 
     text-transform: uppercase;
     &:before {
@@ -198,10 +223,10 @@
       top: 1em;
       left: 1.5em;
 
-      display: inline-block;
+      display: block;
 
       width: 1.666em;
-      height: 2.666em;
+      height: 2.5em;
 
       content: '';
 
@@ -218,7 +243,7 @@
   text-align: left;
 
   color: #fff;
-  border-right: none;
+  //border-right: none;
 
   @include bp($s1) {
     padding: 1em 1em;
@@ -269,25 +294,25 @@
 }
 
 .torrentrow__size {
-  border-right: none;
-  border-left: none;
+  //border-right: none;
+  //border-left: none;
 
   @include bp($s2) {
     white-space: nowrap;
   }
 }
 .torrentrow__seed {
-  border-right: none;
-  border-left: none;
+  //border-right: none;
+  //border-left: none;
 }
 .torrentrow__leech {
-  border-right: none;
-  border-left: none;
+  //border-right: none;
+  //border-left: none;
 }
 .torrentrow__dl {
   min-width: 3em;
 
-  border-left: none;
+  //border-left: none;
   .dlicon {
     width: .875em;
   }

@@ -51,7 +51,10 @@ a {
 	max-width: $widemax;
 }
 .wrapper--narrow {
-	max-width: $narrowmax;
+	max-width: 40em;
+	@include bp($s2) {
+		max-width: $narrowmax;
+	}
 }
 
 hr {
@@ -66,7 +69,7 @@ hr {
 
 /***** Some Custom Grid ******/
 
-$gutter:2em;
+$gutter:1.8%;
 .row {
 	@include clearfix();
 	margin-left:$gutter / -2;
@@ -82,13 +85,56 @@ $gutter:2em;
 	min-height: 1px;
 }
 
+.col-12 {
+	width:100%;
+}
 .col-9 {
 	width:75%;
 }
+
 
 .col-3 {
 	width:25%;
 }
 
 
+
+.elso {
+	.col-9 {
+		padding-top:2.5em;
+		width:66.666%;
+		@include bp($s2) {
+			width:75%;
+
+		}
+	}
+	.col-3 {
+		padding-top:2.5em;
+		width:33.333%;
+		@include bp($s2) {
+			width:25%;
+		}
+	}
+}
+
+.masodik {
+	.col-3 {
+		padding-top:2.5em;
+		width:33.333%;
+		@include bp($s2) {
+			width:25%;
+		}
+	}
+}
+
+.harmadik {
+	.col-3 {
+		width:100%;
+		padding-top: 1.5em;	
+		@include bp($s2) {
+			padding-top:2.5em;
+			width:25%;
+		}
+	}
+}
 

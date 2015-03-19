@@ -186,7 +186,7 @@ module.exports = function (grunt) {
         options: {
           collapseWhitespace: true,
           collapseBooleanAttributes: true,
-          removeAttributeQuotes: false,
+          removeAttributeQuotes: true,
           removeRedundantAttributes: true
         },
         files: [{
@@ -275,7 +275,7 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
             '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
-            '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
+            '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff,woff2}'
           ]
         }]
       }
