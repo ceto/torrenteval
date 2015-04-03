@@ -65,6 +65,23 @@ hr {
 
 
 
+.btn {
+  text-align: center;
+  display: inline-block;
+  font-size: 1.25em;
+  line-height: 1;
+  font-weight: 700;
+  color: #fff;
+  background-color: $highlight;
+  padding: .75em 1.5em .666em;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    background-color: $highlight2;
+  }
+}
+
 
 
 /***** Some Custom Grid ******/

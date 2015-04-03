@@ -1,0 +1,79 @@
+// Tabs
+// -------------------------
+
+.tabbedpanels {
+  border: 1px solid $almostblack;
+  background-color: $pridark;
+}
+// Give the tabs something to sit on
+.nav-tabs {
+  @include clearfix();
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  font-size: 1.125em;
+  font-weight: 700;
+  color:$prilight;
+  border:1px solid $gray;
+  border-bottom:none;
+
+  > li {
+    float: left;
+    // Make the list-items overlay the bottom border
+    margin-top: -1px;
+    margin-bottom: -1px;
+    margin-left:-1px;
+
+    // Actual tabs (as links)
+    > a {
+      display: block;
+      margin-right: 2px;
+      line-height: 1;
+      border: 1px solid transparent;
+      padding:1.333em 1.666em 1.25em;
+      &:hover {
+        color:#fff;
+        //border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+      }
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: $almostblack;;
+        border: 1px solid $gray;
+        border-bottom-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+  
+}
+
+
+// Tabbable tabs
+// -------------------------
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+  @include clearfix();
+  border: 1px solid $gray;
+  background-color:$almostblack;
+  > .tab-pane {
+    display: none;
+    visibility: hidden;
+  }
+  > .active {
+    display: block;
+    visibility: visible;
+  }
+}
+
+
+.panel-body {
+  @include clearfix();
+  padding: 2em 1.875em;
+}

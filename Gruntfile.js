@@ -56,7 +56,8 @@ module.exports = function (grunt) {
               '<%= yeoman.app %>'
             ]
           },
-          watchTask: true
+          watchTask: true,
+          //host: '54.85.172.247'
         }
       },
       dist: {
@@ -381,7 +382,7 @@ module.exports = function (grunt) {
     'svgmin',
     'filerev',
     'usemin',
-    'htmlmin'
+    //'htmlmin'
     ]);
 
   grunt.registerTask('deploy', [
