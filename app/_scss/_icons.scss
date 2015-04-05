@@ -1,0 +1,41 @@
+.icon, .icon:before {
+  display: inline-block;
+  //font-family: $ionicons-font-family;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+
+}
+
+.icon:before {
+  content:'';
+  background-repeat: no-repeat;
+  background-position: center 75%;
+  background-size: .75em auto;
+  height:1em;
+  width:1em;
+}
+
+.icon--dl:before {
+	background-image: url('../img/icon_dl.svg');
+ }
+
+.icon--adatlap:before {
+	background-image: url('../img/icon_adatlap.svg');
+ }
+
+.icon--heart:before {
+	background-image: url('../img/icon_heart.svg');
+ }
+
+ .icon--arrowright:before {
+	background-image: url('../img/icon_arrowright.svg');
+ }
