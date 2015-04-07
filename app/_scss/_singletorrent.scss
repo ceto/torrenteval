@@ -3,23 +3,16 @@
 	padding-top:4em;
 }
 
-.torrent__details {
-	color:#fff;
-	@include clearfix();
-	@include bp($s2) {
-		float:right;
-		width:75%;
-		padding-left:3em;
-	}
-}
-
-
 
 
 .torrent__figure {
 	margin:0 0;
 	padding:0 0;
-	@include bp($s2) {
+	float:left;
+	width:25%;
+	margin:0 .5em 1.5em 0; 
+	@include bp($s1) {
+		margin:0 0;
 		float:left;
 		width:25%;
 	}
@@ -41,6 +34,27 @@
 	}
 }
 
+
+.torrent__details {
+	color:#fff;
+	@include clearfix();
+	@include bp($s1) {
+		float:right;
+		width:75%;
+		padding-left:1.5em;
+	}
+
+	@include bp($s2) {
+		padding-left: 2em; 
+	}
+
+
+}
+
+
+
+
+
 .torrent__params {
 	@include bp($s2) {
 		float:left;
@@ -51,9 +65,11 @@
 
 .torrent__actions {
 	text-align:justify;
-	margin-top:2em;
+	margin-top:1em;
+
 	
 	@include bp($s2) {
+		margin-top: 2em;
 		float:right;
 		width:40%;
 		&:after {
@@ -65,6 +81,12 @@
 
 	}
 
+	.btn{
+		margin-bottom: .333em;
+		font-size: 1.125em;
+	}
+
+	
 }
 .torrent__headadvert {
 	margin:2em 0;
@@ -83,15 +105,25 @@
 
 /* Head elements */
 .torrent__title {
-	font-size: 2.5em;
+	font-size: 1.5em;
 	line-height: 1;
 	margin:0;
+	@include bp($s1) {
+		font-size: 2.5em;
+	}
 }
 
 .torrent__name {
-	font-size:1em;
+	font-size:.75em;
 	font-weight:300;
-	margin:.5em 0 2em;
+	margin:.5em 0 .5em;
+	@include bp($s1) {
+		font-size: 1em;
+		margin-bottom:1em;
+	}
+	@include bp($s2) {
+		margin-bottom:2em;
+	}
 }
 
 
@@ -175,6 +207,10 @@
 		padding-right:.25em;
 		background-color:$pridark;
 	}
+	.icon{
+		color:$highlight;
+		margin-right:.125em;
+	}
 
 }
 .torrentrelated__controls {
@@ -183,31 +219,32 @@
 	.buttons {
 		position:absolute;
 		right:-1px;
-		top:-.333em;
+		top:-.5em;
 	}
 	a {
-		border:1px solid $tertdark;
+		border:2px solid $tertdark;
+		color:$tertdark;
 		border-radius:50%;
 		display: inline-block;
-		width:1.75em;
-		height: 1.75em;
+		width:2.25em;
+		height: 2.25em;
 		text-align: center;
-		font-size: 1em;
-		line-height: 1.75;
+		font-size: .875em;
+		line-height: 2.333;
 		margin-left:.1em;
 		background-color:$secdark;
-		background-repeat:no-repeat;
-		background-position: center center;
-		background-size: .5em auto;
 		&:hover,&:focus {
 			background-color:$gray;
 			border-color:$gray;
+			color:$secdark;
 		}
 		&[rel="prev"] {
-			background-image:url('../img/icon_arrowleft.svg');
+			//text-align:left;
+			//background-image:url('../img/icon_arrowleft.svg');
 		}
 		&[rel="next"] {
-			background-image:url('../img/icon_arrowright.svg');
+			//text-align:right;
+			//background-image:url('../img/icon_arrowright.svg');
 		}
 	}
 

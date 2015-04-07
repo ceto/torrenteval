@@ -15,7 +15,7 @@
   font-weight: 700;
   color:$prilight;
   border:1px solid $gray;
-  border-bottom:none;
+  border-bottom: none;
 
   > li {
     float: left;
@@ -30,6 +30,7 @@
       margin-right: 2px;
       line-height: 1;
       border: 1px solid transparent;
+      //border-bottom:none;
       padding:1.333em 1.666em 1.25em;
       &:hover {
         color:#fff;

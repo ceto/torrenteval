@@ -317,7 +317,10 @@
   min-width: 3em;
 
   //border-left: none;
-  .dlicon {
-    width: .875em;
+  a {
+    color:$highlight;
+    &:hover,&:focus {
+      color:$highlight2;
+    }
   }
 }
